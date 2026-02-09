@@ -2,63 +2,14 @@
 using namespace std;
 
 int main() {
-    int n;
-    cin>>n;
-    for(int i=1;i<=n;i++){
-        //number upper left
-        for(int j=1;j<=i;j++){
-            if(j%2!=0){
-                cout<<i<<" ";
-            }
-            else{
-                cout<<2*n-i<<" ";
-            }
+    int a,b;
+    cin>>a>>b;
+    int ans=1;
+    for(int i=1;i<=min(a,b);i++){
+        if(a%i==0 && b%i==0){
+            ans=i;
         }
-        //spaces
-        for(int j=1;j<=n-i;j++){
-            cout<<"  "; 
-        }
-        for(int j=1;j<=n-i;j++){
-            cout<<"  "; 
-        }
-        for(int j=1;j<=i;j++){
-            if(j%2==0){
-                cout<<i<<" ";
-            }
-            else{
-                cout<<2*n-i<<" ";
-            }
-        }
-        cout<<endl;
-
     }
-    for(int i=n-1;i>=1;i--){
-        //number upper left
-        for(int j=1;j<=i;j++){
-            if(j%2==0){
-                cout<<i<<" ";
-            }
-            else{
-                cout<<2*n-i<<" ";
-            }
-        }
-        //spaces
-        for(int j=1;j<=n-i;j++){
-            cout<<"  "; 
-        }
-        for(int j=1;j<=n-i;j++){
-            cout<<"  "; 
-        }
-        for(int j=1;j<=i;j++){
-            if(j%2!=0){
-                cout<<i<<" ";
-            }
-            else{
-                cout<<2*n-i<<" ";
-            }
-        }
-        cout<<endl;
-
-    }
+    cout<<ans<<endl;
     return 0;
 }
